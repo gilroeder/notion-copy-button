@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.copy-button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <span id="textToCopy">This is the text to copy.</span>
+  <button class="copy-button" onclick="copyText()">📋 Copy</button>
+</div>
+
+<script>
+function copyText() {
+  var textToCopy = document.getElementById("textToCopy").innerText;
+  navigator.clipboard.writeText(textToCopy).then(function() {
+    alert('Text copied to clipboard');
+  }, function(err) {
+    console.error('Error copying text: ', err);
+  });
+}
+</script>
+
+</body>
+</html>
